@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # E-COMMERCE WEBSITE
 ### By Joy Olago, Timothy Baraka, Kimani Mbatia & Victor Kiptoo.
@@ -30,3 +31,6 @@ Github account: Joy Olago, Kimani Mbatia, Timothy Baraka, Victor Kiptoo
 
 ## LiCENSE
 MIT License Copyright (c) {2023} Joy Olago,Kimani Mbatia, Timothy Baraka, Victor Kiptoo
+=======
+#Added Branch
+>>>>>>> df736bc (Added Branch)
