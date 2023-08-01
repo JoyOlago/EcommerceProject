@@ -1,6 +1,5 @@
 import React from "react";
 import "./NavBar.css";
-import 
 
 function NavBar(){
     const navBarStyle={
