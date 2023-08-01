@@ -1,0 +1,13 @@
+{
+    "message": "Fetching products",
+    "products": [
+      {
+        "title": "Product One",
+        "description": "This is my products description"
+      },
+      {
+        "title": "Product Two",
+        "description": "This is my products description"
+      }
+    ]
+  }
