@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d36491e (Updated README.md)
 
 # E-COMMERCE WEBSITE
 ### By Joy Olago, Timothy Baraka, Kimani Mbatia & Victor Kiptoo.
@@ -9,12 +12,19 @@ This is a React application, E-Commerce, that will allow the user to view a list
  1. Fork the project and clone it.
  2. Open in terminal.
  3. Run the command below to install the required dependencies:
+<<<<<<< HEAD
 
  ```sh
 npm install
 ```
  4. Start the app by running the command:
  
+=======
+ ``sh
+npm install
+```
+ 4. Start the app by running the command:
+>>>>>>> d36491e (Updated README.md)
  ```sh
 npm start
 ```
@@ -30,7 +40,11 @@ JSX
 Github account: Joy Olago, Kimani Mbatia, Timothy Baraka, Victor Kiptoo
 
 ## LiCENSE
+<<<<<<< HEAD
 MIT License Copyright (c) {2023} Joy Olago,Kimani Mbatia, Timothy Baraka, Victor Kiptoo
 =======
 #Added Branch
 >>>>>>> df736bc (Added Branch)
+=======
+MIT License Copyright (c) {2023} Joy Olago,Kimani Mbatia, Timothy Baraka, Victor Kiptoo
+>>>>>>> d36491e (Updated README.md)
