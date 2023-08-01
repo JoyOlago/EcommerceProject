@@ -13,6 +13,7 @@ This is a React application, E-Commerce, that will allow the user to view a list
  2. Open in terminal.
  3. Run the command below to install the required dependencies:
 <<<<<<< HEAD
+<<<<<<< HEAD
 
  ```sh
 npm install
@@ -25,6 +26,14 @@ npm install
 ```
  4. Start the app by running the command:
 >>>>>>> d36491e (Updated README.md)
+=======
+
+ ```sh
+npm install
+```
+ 4. Start the app by running the command:
+ 
+>>>>>>> 2e201b1 (Readme Update)
  ```sh
 npm start
 ```
