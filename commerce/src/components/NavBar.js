@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavBar.css";
+import 
 
 function NavBar(){
     const navBarStyle={
@@ -33,6 +34,27 @@ function NavBar(){
         top: "30%"
     }
 
+    return(
+        <>
+         <nav className="navbar-custom" style={navBarStyle}>
+            <div className="container" id="menuContainer" style={menuContainerStyle}>
+             <div style={menuIconStyle}></div>
+                <div style={menuIconStyle}></div>
+                <div style={menuIconStyle}></div>
+            </div>
+            <div class="row" style={loginRegisterStyle}>
+                <div className="col" style={{borderRight: "2px solid white"}}>
+                    <h6>Login</h6>
+                </div>
+                <div className="col">
+                    <h6>Register</h6>
+                </div>
+            </div>
+        </nav>   
+        </>
+    )
+}
+export default NavBar
     return(
         <>
          <nav className="navbar-custom" style={navBarStyle}>
