@@ -21,6 +21,13 @@ function NavBar({ navBarStyle }) {
   };
 =======
 function NavBar(){
+
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    const handleRegistrationComplete = () => {
+        setIsRegistered(true);
+      };
+
     const navBarStyle={
         height:"120px",
         backgroundColor: '#D7BFD4'
@@ -70,6 +77,7 @@ function NavBar(){
     textAlign: "center",
   };
 
+<<<<<<< HEAD
   return (
     <>
       {showSignupForm && (
@@ -138,6 +146,8 @@ export default NavBar;
   
 =======
 export default NavBar
+=======
+>>>>>>> 6eb5651 (Feat: Registration Functionality and conditional rendering of Login)
     return(
         <>
          <nav className="navbar-custom" style={navBarStyle}>
@@ -151,7 +161,11 @@ export default NavBar
                     <h6>Login</h6>
                 </div>
                 <div className="col">
-                    <h6>Register</h6>
+                   {/* Show different content based on registration status  */}
+                  {isRegistered ? (
+                 <h6>Registered Successfully!</h6>) : (
+                  <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
+                   )}
                 </div>
             </div>
         </nav>   
