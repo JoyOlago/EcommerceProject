@@ -3,6 +3,13 @@ import "./NavBar.css";
 import  RegistrationForm  from "./Register";
 
 function NavBar(){
+
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    const handleRegistrationComplete = () => {
+        setIsRegistered(true);
+      };
+
     const navBarStyle={
         height:"120px",
         backgroundColor: '#D7BFD4'
@@ -59,28 +66,11 @@ function NavBar(){
                     <h6>Login</h6>
                 </div>
                 <div className="col">
-                    <h6>Register</h6>
-                </div>
-            </div>
-        </nav>   
-        </>
-    )
-}
-export default NavBar
-    return(
-        <>
-         <nav className="navbar-custom" style={navBarStyle}>
-            <div className="container" id="menuContainer" style={menuContainerStyle}>
-             <div style={menuIconStyle}></div>
-                <div style={menuIconStyle}></div>
-                <div style={menuIconStyle}></div>
-            </div>
-            <div class="row" style={loginRegisterStyle}>
-                <div className="col" style={{borderRight: "2px solid white"}}>
-                    <h6>Login</h6>
-                </div>
-                <div className="col">
-                    <h6>Register</h6>
+                   {/* Show different content based on registration status  */}
+                  {isRegistered ? (
+                 <h6>Registered Successfully!</h6>) : (
+                  <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
+                   )}
                 </div>
             </div>
         </nav>   
