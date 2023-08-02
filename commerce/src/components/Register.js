@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ navBarStyle, menuContainerStyle, loginRegisterStyle }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -8,9 +8,15 @@ const RegistrationForm = () => {
     password: '',
   });
 
+  const [showSignupForm, setShowSignupForm] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
+
+  const handleRegisterClick = () => {
+    setShowSignupForm(!showSignupForm);
   };
 
   const handleFormSubmit = async (e) => {
@@ -35,64 +41,78 @@ const RegistrationForm = () => {
       }
     } catch (error) {
       console.error('Error during registration!', error);
-      // You can handle other errors (e.g., network issues) here.
     }
   };
 
   return (
-<div>     
-          <div>
-            <h2>Register</h2>
-            <form onSubmit={handleFormSubmit}>
-              <div>
-                <label htmlFor="firstName">First Name:</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="lastName">Last Name:</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="email">Email:</label>
-                <input
-                  type="text"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="password">Password:</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <button type="submit">Register</button>
-            </form>
+    <>
+      <nav className="navbar-custom" style={navBarStyle}>
+        <div className="container" id="menuContainer" style={menuContainerStyle}>
+          {/* ... */}
+        </div>
+  
+        <div className="row" style={loginRegisterStyle}>
+          <div className="col" style={{ borderRight: "2px solid white" }}>
+            <h6>Login</h6>
           </div>
-  </div>
-   
+          <div className="row" style={loginRegisterStyle}>
+            {/* Toggle visibility of the signup form on click */}
+            <h6 onClick={handleRegisterClick}>Register</h6>
+          </div>
+        </div>
+      </nav>
+
+      {showSignupForm && (
+        <form onSubmit={handleFormSubmit}>
+          <div>
+            <label htmlFor="firstName">First Name:</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="lastName">Last Name:</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleInputChange}
+            />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      )}
+    </>
   );
-};
+}
 
 export default RegistrationForm;
+
 
 
 
