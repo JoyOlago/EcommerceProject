@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const RegistrationForm = ({ onRegistrationComplete }) => {
+const RegistrationForm = ({ isVisible, onRegister }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -37,22 +37,22 @@ const RegistrationForm = ({ onRegistrationComplete }) => {
         password,
       }),
     })
-    .then((response) => response.json())
-    .then((data) => {
-      // Simulate successful registration
-      console.log('Registration successful!', data);
-      // Call the callback function to notify NavBar about successful registration
-      onRegistrationComplete(); // This will update the state in NavBar and show the success message
-    })
-    .catch((error) => {
-      console.error('Registration failed!', error);
-      // Handle registration errors here (e.g., show error messages to the user)
-    });
-};
+      .then((response) => response.json())
+      .then((data) => {
+        // Simulate successful registration
+        console.log('Registration successful!', data);
+        // Call the callback function to notify the parent component (NavBar) about successful registration
+        onRegister();
+      })
+      .catch((error) => {
+        console.error('Registration failed!', error);
+        // Handle registration errors here (e.g., show error messages to the user)
+      });
+  };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className={`registration-form ${isVisible ? '' : 'd-none'}`}>
+
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="firstname">firstName:</label>
@@ -97,3 +97,22 @@ const RegistrationForm = ({ onRegistrationComplete }) => {
 };
 
 export default RegistrationForm;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
