@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import customAsset from '../Assets/Home/Asset 1.svg';
@@ -40,6 +41,16 @@ function DisplayProductList({cartItems, setCartItems}) {
     width: "80%",
     height: "auto"
 }
+=======
+
+import React, { useState, useEffect } from 'react';
+
+
+function DisplayProductList() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
+>>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
 
   useEffect(() => {
     // Fetch the product data from the API
@@ -55,11 +66,14 @@ function DisplayProductList({cartItems, setCartItems}) {
       });
   }, []);
 
+<<<<<<< HEAD
   function toggleLogin(){
     setIsLoggedIn(true)
   }
 
 
+=======
+>>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -67,6 +81,7 @@ function DisplayProductList({cartItems, setCartItems}) {
   return (
     <div>
 {/* <div class="card" style="width: 18rem;"> */}
+<<<<<<< HEAD
 
 <div className="container" style={containerStyle}>
   <h1 style={{color:"#1D7773", fontSize:"72px"}}>Product List</h1>
@@ -130,9 +145,33 @@ function DisplayProductList({cartItems, setCartItems}) {
         <div key={product.product_name}>{product.product_name}</div>
       ))} */}
       {displayProductDetail == true ? ( <ProductDetails selectedProduct={selectedProduct} addItemToCart={addItemToCart} hideMore={hideMore} /> ) : ('')}
+<<<<<<< HEAD
 
+=======
+=======
+      <h2>Product List</h2>
+      {products.length === 0 ? (
+        <div>No products found.</div>
+      ) : (
+        <ul>
+          {products.map(product => (
+            <li key={product.product_name}>
+              <h3>{product.product_name}</h3>
+              <p>{product.product_description}</p>
+              <p>Price: {product.unit_price}</p>
+              <img alt="Product" src={product.product_full_image} />
+            </li>
+          ))}
+        </ul>
+      )}
+>>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
+>>>>>>> a7cf9fc (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default DisplayProductList;
+=======
+export default DisplayProductList;
+>>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
