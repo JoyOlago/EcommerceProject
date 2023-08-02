@@ -3,6 +3,12 @@ import "./NavBar.css";
 import  RegistrationForm  from "./Register";
 
 function NavBar(){
+
+    const [isRegistered, setIsRegistered] = useState(false);
+
+    const handleRegistrationComplete = () => {
+        setIsRegistered(true);
+      };
     const navBarStyle={
         height:"120px",
         backgroundColor: '#D7BFD4'
