@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 import Home from './components/Home';
 import DisplayProductList from './components/ProductList';
-
+import SearchBar from './components/SearchBar';
 function App() {
   let cardStyle={
     width:"18rem"
@@ -14,6 +14,7 @@ function App() {
     <>
     <Header />
     <Home />
+    <SearchBar/>
     <DisplayProductList/>
     <Footer />  
     </>
