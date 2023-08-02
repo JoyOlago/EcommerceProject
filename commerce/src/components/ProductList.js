@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 function DisplayProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  //add state to handle display when product is clicked
+  const [selectProduct, setSelectedProduct] = useState(null)
   const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
 
   useEffect(() => {
@@ -20,7 +22,12 @@ function DisplayProductList() {
         setLoading(false);
       });
   }, []);
+//add function to handleProduct click 
 
+  function handleProductClick(product){
+    setSelectedProduct(product)
+    
+  }
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -34,11 +41,13 @@ function DisplayProductList() {
       ) : (
         <ul>
           {products.map(product => (
-            <li key={product.product_name}>
+            <li key={product.id} onClick={() => handleProductClick(product)}>
               <h3>{product.product_name}</h3>
               <p>{product.product_description}</p>
               <p>Price: {product.unit_price}</p>
               <img alt="Product" src={product.product_full_image} />
+              {/* <p>{product.product_thumbnail}</p> */}
+              <p>Ranking: {product.ranking}</p>
             </li>
           ))}
         </ul>
