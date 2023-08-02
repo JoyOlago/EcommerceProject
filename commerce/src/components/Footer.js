@@ -20,11 +20,11 @@ function Footer(){
     }
 
     return(
-        <footer className="fixed-bottom" style={footerStyle}>
+        <footer className="bottom" style={footerStyle}>
             <div className="row">
                 <div className="col">
                     <div className="container" style={footerInfoStyle}>
-                    <h2>Find Us</h2>
+                    <h3>Find Us</h3>
                     <address>1 Koinange Street
                         Nairobi City Centre
                     </address>
@@ -32,9 +32,9 @@ function Footer(){
                 </div>
             </div>
                 <div className="col" style={{color:"white"}}>
-                    <h2>Contact Us</h2>
+                    <h3>Contact Us</h3>
                     <p>0792 000 000 </p>
-                    <h3>Social Media</h3>
+                    <p>Social Media</p>
                     <img src={facebooklogo} style={socialMediaLinksStyle}></img>
                     <img src={instagramlogo} style={socialMediaLinksStyle}></img>
                 </div>

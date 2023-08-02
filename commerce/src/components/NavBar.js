@@ -41,6 +41,18 @@ function NavBar(){
         top: "30%"
     }
 
+    function showLoginForm(){
+        return(
+            <div className="col">
+            {/* Show different content based on registration status  */}
+           {isRegistered ? (
+          <h6>Registered Successfully!</h6>) : (
+           <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
+            )}
+         </div>
+        )
+    }
+
     return(
         <>
          <nav className="navbar-custom" style={navBarStyle}>
@@ -54,11 +66,7 @@ function NavBar(){
                     <h6>Login</h6>
                 </div>
                 <div className="col">
-                   {/* Show different content based on registration status  */}
-                  {isRegistered ? (
-                 <h6>Registered Successfully!</h6>) : (
-                  <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
-                   )}
+                    <h6>Register</h6>
                 </div>
             </div>
         </nav>   
