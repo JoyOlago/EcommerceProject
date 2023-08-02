@@ -1,87 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import "./NavBar.css";
 
-const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-  });
+function NavBar(){
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-  };
+    const [isRegistered, setIsRegistered] = useState(false);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-   
-    fetch('http://ecommerce.muersolutions.com/api/v1/user/signup', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Registration successful!', data);
-      
-      })
-      .catch((error) => {
-        console.error('Registration failed!', error);
-        
-      });
-  };
+    const handleRegistrationComplete = () => {
+        setIsRegistered(true);
+      };
 
-  return (
-    <div>
-      <h2>Register</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  );
-};
+    const navBarStyle={
+        height:"120px",
+        backgroundColor: '#D7BFD4'
+    }
 
-export default RegistrationForm;
+    const menuContainerStyle={
+        position: "relative",
+        //marginLeft: "100",
+        float: "left",
+        top: "30%",
+        //border: "3px solid black",
+        width:"80px"
+    }
+
+    const menuIconStyle={
+        width:"58px",
+        height: "5px",
+        backgroundColor: "white",
+        margin: "6px 0"
+    }
+
+    const loginRegisterStyle={
+        position:"relative",
+        float: "right",
+        //border: "3px solid black",
+        width: "180px",
+        color: "white",
+        marginRight: "5%",
+        top: "30%"
+    }
+
+    return(
+        <>
+         <nav className="navbar-custom" style={navBarStyle}>
+            <div className="container" id="menuContainer" style={menuContainerStyle}>
+             <div style={menuIconStyle}></div>
+                <div style={menuIconStyle}></div>
+                <div style={menuIconStyle}></div>
+            </div>
+
+            <div class="row" style={loginRegisterStyle}>
+                <div className="col" style={{borderRight: "2px solid white"}}>
+                    <h6>Login</h6>
+                </div>
+                <div class='row' style={loginRegisterStyle}>
+                  <h6>Register</h6>
+                </div>   
+            </div>
+        </nav>   
+        </>
+    )
+}
+export default NavBar
