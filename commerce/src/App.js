@@ -38,8 +38,11 @@ function App() {
     <>
     <Header />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="App">
 =======
+=======
+>>>>>>> d3896cd (Feat: append display items to Home.js)
       {/* <div className="App">
 >>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
         <div className="card" style={cardStyle}>
@@ -55,6 +58,9 @@ function App() {
 =======
 =======
       </div> */}
+=======
+    <Home />
+>>>>>>> 9676354 (Feat: append display items to Home.js)
     <DisplayProductList/>
 >>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
     <Footer />  
