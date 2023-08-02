@@ -39,7 +39,7 @@ const RegistrationForm = ({ onRegistrationComplete }) => {
     })
     .then((response) => response.json())
     .then((data) => {
-      // Simulate successful registration (you would need to set up your backend)
+      // Simulate successful registration
       console.log('Registration successful!', data);
       // Call the callback function to notify NavBar about successful registration
       onRegistrationComplete(); // This will update the state in NavBar and show the success message
@@ -97,46 +97,3 @@ const RegistrationForm = ({ onRegistrationComplete }) => {
 };
 
 export default RegistrationForm;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState } from 'react';
-
-// const RegistrationForm = () => { // Receive the callback prop from NavBar
-//   // ... your existing code ...
-
-//   const handleFormSubmit = (e) => {
-//     e.preventDefault();
-//     // Simulate server-side processing using fetch
-//     fetch('/api/register_stub', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify({
-//         firstName,
-//         lastName,
-//         email,
-//         password,
-//       }),
-//     })
-   
-//   // ... your existing code ...
-// };
-
-// export default RegistrationForm;
