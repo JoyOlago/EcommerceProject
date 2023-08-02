@@ -5,9 +5,7 @@ import Footer from './components/Footer'
 import DisplayProductList from './components/ProductList';
 
 function App() {
-  let cardStyle={
-    width:"18rem"
-  }
+
   return (
     <>
     <Header />

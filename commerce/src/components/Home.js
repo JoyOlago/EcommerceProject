@@ -50,15 +50,6 @@ function Home(){
         </div>
 
 
-        <div className="container" style={containerStyle}>
-            <h1 style={{color:"#1D7773", fontSize:"72px"}}>Best Shoes in Town</h1>
-            <div className="container" style={customAssetContainer}>
-                <img src={customAsset}></img>
-            </div>
-            <button className="btn btn-primary" style={{width:"20%", height:"20%"}}>Start Shopping</button>
-        </div>
-
-
 {/*         <div className="container-fluid">
             <img src={homePageimage}></img>
         </div> */}

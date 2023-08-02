@@ -20,7 +20,7 @@ function Footer(){
     }
 
     return(
-        <footer className="fixed-bottom" style={footerStyle}>
+        <footer className="bottom" style={footerStyle}>
             <div className="row">
                 <div className="col">
                     <div className="container" style={footerInfoStyle}>
