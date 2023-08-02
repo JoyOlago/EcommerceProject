@@ -14,6 +14,7 @@ function App() {
     <>
     <Header />
     <Home />
+    <DisplayProductList/>
     <Footer />  
     </>
 
