@@ -1,80 +1,79 @@
 import React, { useState } from "react";
+import RegistrationForm from "./Register"; // Import the RegistrationForm component
 import "./NavBar.css";
-import  RegistrationForm  from "./Register";
 
-function NavBar(){
+function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [showSignupForm, setShowSignupForm] = useState(false); // Add this state
 
-    const [isRegistered, setIsRegistered] = useState(false);
+  const handleRegisterClick = () => {
+    setShowSignupForm(!showSignupForm); // Toggle the visibility of the signup form
+  };
 
-    const handleRegistrationComplete = () => {
-        setIsRegistered(true);
-      };
+  const menuContainerStyle = {
+    position: "relative",
+    //marginLeft: "100",
+    float: "left",
+    top: "30%",
+    //border: "3px solid black",
+    width: "80px",
+  };
 
-    const navBarStyle={
-        height:"120px",
-        backgroundColor: '#D7BFD4'
-    }
+  const menuIconStyle = {
+    width: "58px",
+    height: "5px",
+    backgroundColor: "white",
+    margin: "6px 0",
+  };
 
-    const menuContainerStyle={
-        position: "relative",
-        //marginLeft: "100",
-        float: "left",
-        top: "30%",
-        //border: "3px solid black",
-        width:"80px"
-    }
+  const loginRegisterStyle = {
+    position: "relative",
+    float: "right",
+    width: "190px",
+    color: "white",
+    marginRight: "5%",
+    top: "30%",
+  };
 
-    const menuIconStyle={
-        width:"58px",
-        height: "5px",
-        backgroundColor: "white",
-        margin: "6px 0"
-    }
+  const buttonStyle={
+    width:"50px",
+    backgroundColor: "#D7BFD4",
+    border: "none",
+    color: "white",
+    textAlign: "center"
+  }
 
-    const loginRegisterStyle={
-        position:"relative",
-        float: "right",
-        //border: "3px solid black",
-        width: "180px",
-        color: "white",
-        marginRight: "5%",
-        top: "30%"
-    }
+  return (
+    <>
+    {showSignupForm && <RegistrationForm navBarStyle={navBarStyle} handleRegisterClick={handleRegisterClick} />}
+      <nav className="navbar-custom" style={navBarStyle}>
+        <div className="container" id="menuContainer" style={menuContainerStyle}>
+          {/* ... */}
+        </div>
 
-    function showLoginForm(){
-        return(
-            <div className="col">
-            {/* Show different content based on registration status  */}
-           {isRegistered ? (
-          <h6>Registered Successfully!</h6>) : (
-           <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
-            )}
-         </div>
-        )
-    }
+        <h1 style={{ paddingLeft:"20px", fontSize:"60px", fontFamily: "Franklin-Gothic-Medium", position:"relative", color:"white", float:"left", top:"18%"}}>BossShop</h1>
 
-    return(
-        <>
-         <nav className="navbar-custom" style={navBarStyle}>
-            <div className="container" id="menuContainer" style={menuContainerStyle}>
-             <div style={menuIconStyle}></div>
-                <div style={menuIconStyle}></div>
-                <div style={menuIconStyle}></div>
+        <div className="row" style={loginRegisterStyle}>
+          <div className="col" style={{border: "3px solid white",borderRadius: "20px"}}>
+            <button style={buttonStyle}>Login</button>
+          </div>
+          <div className="col" style={{border: "3px solid white",borderRadius: "20px"}}>
+              <button style={buttonStyle} onClick={handleRegisterClick}>Register</button>
             </div>
-            <div class="row" style={loginRegisterStyle}>
-                <div className="col" style={{borderRight: "2px solid white"}}>
-                    <h6>Login</h6>
-                </div>
-                <div className="col">
-                   {/* Show different content based on registration status  */}
-                  {isRegistered ? (
-                 <h6>Registered Successfully!</h6>) : (
-                  <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
-                   )}
-                </div>
-            </div>
-        </nav>   
-        </>
-    )
+            {/* Toggle visibility of the signup form on click */}
+
+        
+        </div>
+      </nav>
+
+      {/* Pass handleRegisterClick as a prop to RegistrationForm */}
+      
+    </>
+  );
 }
-export default NavBar
+
+export default NavBar;
+
+
+  
+  

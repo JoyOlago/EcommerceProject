@@ -28,11 +28,11 @@ function Home(){
 
     return(
         <>
-    <div className="container-fluid" style={carouselContainerStyle}>
+{/*     <div className="container-fluid" style={carouselContainerStyle}>
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src={shoe1} style={imageStyle} class="d-block" alt="..."></img>
+                    <img src= style={imageStyle} class="d-block" alt="..."></img>
                 </div>
                 <div class="carousel-item">
                     <img src={shoe2} style={imageStyle} class="d-block" alt="..."></img>
@@ -47,16 +47,10 @@ function Home(){
             <span class="visually-hidden">Next</span>
         </button>
         </div>
-        </div>
+        </div> */}
 
 
-        <div className="container" style={containerStyle}>
-            <h1 style={{color:"#1D7773", fontSize:"72px"}}>Best Shoes in Town</h1>
-            <div className="container" style={customAssetContainer}>
-                <img src={customAsset}></img>
-            </div>
-            <button className="btn btn-primary" style={{width:"20%", height:"20%"}}>Start Shopping</button>
-        </div>
+
 
 
 {/*         <div className="container-fluid">
