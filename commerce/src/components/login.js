@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { loginUser } from './userAuthentication';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -18,11 +17,22 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await loginUser(formData);
-      console.log('Login successful!', response);
-      // Redirect to a new page or update the UI as needed after successful login.
+      const response = await fetch('http://ecommerce.muersolutions.com/api/v1/user/login', { 
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Login successful!', data);
+      } else {
+        console.log('Login failed. Please check your credentials.');
+      }
     } catch (error) {
-      // Handle login errors and display appropriate messages.
+      console.error('An error occurred during login:', error);
     }
   };
 
@@ -48,3 +58,4 @@ const Login = () => {
 };
 
 export default Login;
+
