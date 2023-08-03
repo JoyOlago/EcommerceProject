@@ -10,7 +10,6 @@ const RegistrationForm = ({ navBarStyle, menuContainerStyle, loginRegisterStyle 
   });
 
   const [showSignupForm, setShowSignupForm] = useState(true);
-  const [showSignupForm, setShowSignupForm] = useState(true);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
