@@ -1,26 +1,14 @@
 import React, { useState } from "react";
 import RegistrationForm from "./Register"; // Import the RegistrationForm component
+import Login from "./login"; // Import the Login component
 import "./NavBar.css";
 
-function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
+function NavBar({ navBarStyle }) {
   const [isRegistered, setIsRegistered] = useState(false);
   const [showSignupForm, setShowSignupForm] = useState(false); // Add this state
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [firstName, setFirstName] = useState('');
-
-  const handleRegistrationComplete = (firstName) => {
-    setIsLoggedIn(true);
-    setFirstName(firstName);
-  };
 
   const handleRegisterClick = () => {
     setShowSignupForm(!showSignupForm); // Toggle the visibility of the signup form
-  };
-
-  // Define the handleLogout function to handle logout
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setFirstName('');
   };
 
   const menuContainerStyle = {
@@ -58,22 +46,19 @@ function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
         <h1 style={{ paddingLeft: "20px", fontSize: "60px", fontFamily: "Franklin-Gothic-Medium", position: "relative", color: "white", float: "left", top: "18%" }}>BossShop</h1>
 
         <div className="row" style={loginRegisterStyle}>
-          {isLoggedIn ? (
-            // If user is logged in, show welcome message and logout button
-            <div className="col">
-              <h6>Hello, {firstName}!</h6>
-              <button onClick={handleLogout} style={buttonStyle}>Logout</button>
-            </div>
-          ) : (
-            // If user is not logged in, show login and register buttons
-            <div className="col">
-              <button onClick={handleLogin} style={buttonStyle}>Login</button>
-              <button onClick={handleRegisterClick} style={buttonStyle}>Register</button>
-            </div>
-          )}
+          <div className="col" style={{ borderRight: "2px solid white" }}>
+            <h6>Login</h6>
+          </div>
+          <div className="row" style={loginRegisterStyle}>
+            {/* Toggle visibility of the signup form on click */}
+            <h6 onClick={handleRegisterClick}>Register</h6>
+          </div>
         </div>
 
       </nav>
+
+      {/* Pass handleRegisterClick as a prop to RegistrationForm */}
+      {showSignupForm && <RegistrationForm navBarStyle={navBarStyle} handleRegisterClick={handleRegisterClick} />}
     </>
   );
 }
@@ -81,3 +66,5 @@ function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
 export default NavBar;
 
 
+  
+  
