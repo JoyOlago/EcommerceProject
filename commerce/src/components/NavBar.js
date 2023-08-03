@@ -79,5 +79,3 @@ function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
 }
 
 export default NavBar;
-
-
