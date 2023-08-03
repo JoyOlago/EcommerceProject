@@ -7,7 +7,8 @@ import 'reactjs-popup/dist/index.css';
 function DisplayProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showDescripton, setShowDescription] = useState(false)
   const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
 
   let cardStyle={
@@ -47,6 +48,14 @@ function DisplayProductList() {
     setIsLoggedIn(true)
   }
 
+  function toggleShowDescription(){
+    setShowDescription(true)
+  }
+
+  function showMore(event){
+    alert(event.target.name)
+  }
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -78,7 +87,8 @@ function DisplayProductList() {
                 <div className='card-header'>
                   <h5 style={{color:"black"}}>Price: {product.unit_price}</h5>
                 </div>
-                {isLoggedIn == true ? (<p style={{fontSize:"12px"}}>{product.product_description}</p>):(<p></p>)} 
+                <button name={product.product_name} className='btn btn-primary' onClick={showMore}>Show More</button>
+                {showDescripton == true ? (<p style={{fontSize:"12px"}}>{product.product_description}</p>):(<p></p>)} 
             </div>
           </div>
           ))}
