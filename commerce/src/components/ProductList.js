@@ -3,18 +3,28 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import customAsset from '../Assets/Home/Asset 1.svg';
 import 'reactjs-popup/dist/index.css';
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 import ProductDetails from './ProductDetail';
+=======
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 
 
 function DisplayProductList({cartItems, setCartItems}) {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState([]);
   const [loading, setLoading] = useState(true);
+<<<<<<< HEAD
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [displayProductDetail, setDisplayProductDetail] = useState(false);
 
 
+=======
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
   const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
 /* 
   let object=
@@ -67,6 +77,9 @@ function DisplayProductList() {
   }, []);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
   function toggleLogin(){
     setIsLoggedIn(true)
   }
@@ -91,7 +104,11 @@ function DisplayProductList() {
 </div>
 
 <SearchBar/>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 <div className='card'>
   {cartItems.map(item=>(
     <>
@@ -103,7 +120,13 @@ function DisplayProductList() {
 </div>
 <div className='container-fluid' style={{backgroundColor:'#E6E6E6'}}>
   <div className="container" style={{backgroundColor:'#E6E6E6'}}>
+<<<<<<< HEAD
 
+=======
+=======
+<div className="container">
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
   {products.length === 0 ? (
         <div>No products found.</div>
       ) : (
@@ -111,16 +134,32 @@ function DisplayProductList() {
           {products.map(product => (
               <div className="col" style={{padding:"10px"}}>
               <div key={product.product_name} className="card" style={cardStyle}>
+<<<<<<< HEAD
 
                 <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
                 <div className='card-header' style={{height:"10rem"}}>
                   <p style={{fontFamily:"Franklin-Gothic-Medium",fontSize:"20px", color:"black"}} className='card-text'>{product.product_name.slice(0,20)}</p>
 
+=======
+<<<<<<< HEAD
+                <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
+                <div className='card-header' style={{height:"10rem"}}>
+                  <p style={{fontFamily:"Franklin-Gothic-Medium",fontSize:"20px", color:"black"}} className='card-text'>{product.product_name.slice(0,20)}</p>
+=======
+                <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"300px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
+                <div className='card-header' style={{backgroundColor:"#D7BFD4", height:"10rem"}}>
+                  <p style={{fontSize:"14px", color:"black"}} className='card-text'>{product.product_name}</p>
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
                 </div>
                 <div className='card-header'>
                   <h5 style={{color:"black"}}>Price: {product.unit_price}</h5>
                 </div>
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
                 <div className='card-header'>
                 <div className='row'>
                   <div className='col'>
@@ -131,7 +170,13 @@ function DisplayProductList() {
                   </div>
                 </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+=======
+                {isLoggedIn == true ? (<p style={{fontSize:"12px"}}>{product.product_description}</p>):(<p></p>)} 
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
             </div>
           </div>
           ))}

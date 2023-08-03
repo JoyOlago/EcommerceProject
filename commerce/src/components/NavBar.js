@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RegistrationForm from "./Register"; // Import the RegistrationForm component
+<<<<<<< HEAD
 
 import Login from "./login"; // Import the Login component
 import "./NavBar.css";
@@ -52,17 +53,43 @@ function NavBar(){
   };
 
 
+=======
+import "./NavBar.css";
+
+function NavBar({ navBarStyle }) { // Receive navBarStyle as a prop
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [showSignupForm, setShowSignupForm] = useState(false); // Add this state
+
+  const handleRegisterClick = () => {
+    setShowSignupForm(!showSignupForm); // Toggle the visibility of the signup form
+  };
+
+  const menuContainerStyle = {
+    position: "relative",
+    //marginLeft: "100",
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
     float: "left",
     top: "30%",
+    //border: "3px solid black",
     width: "80px",
+  };
+
+  const menuIconStyle = {
+    width: "58px",
+    height: "5px",
+    backgroundColor: "white",
+    margin: "6px 0",
   };
 
   const loginRegisterStyle = {
     position: "relative",
     float: "right",
     width: "190px",
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
     color: "white",
     marginRight: "5%",
     top: "30%",
@@ -78,6 +105,7 @@ function NavBar(){
   };
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   return (
     <>
       {showSignupForm && (
@@ -87,11 +115,17 @@ function NavBar(){
         />
       )}
 
+=======
+  return (
+    <>
+    {showSignupForm && <RegistrationForm navBarStyle={navBarStyle} handleRegisterClick={handleRegisterClick} />}
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
       <nav className="navbar-custom" style={navBarStyle}>
         <div className="container" id="menuContainer" style={menuContainerStyle}>
           {/* ... */}
         </div>
 
+<<<<<<< HEAD
 
         <h1
           style={{
@@ -155,22 +189,36 @@ export default NavBar
              <div style={menuIconStyle}></div>
                 <div style={menuIconStyle}></div>
                 <div style={menuIconStyle}></div>
+=======
+        <h1 style={{ paddingLeft:"20px", fontSize:"60px", fontFamily: "Franklin-Gothic-Medium", position:"relative", color:"white", float:"left", top:"18%"}}>BossShop</h1>
+
+        <div className="row" style={loginRegisterStyle}>
+          <div className="col" style={{border: "3px solid white",borderRadius: "20px"}}>
+            <button style={buttonStyle}>Login</button>
+          </div>
+          <div className="col" style={{border: "3px solid white",borderRadius: "20px"}}>
+              <button style={buttonStyle} onClick={handleRegisterClick}>Register</button>
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
             </div>
-            <div class="row" style={loginRegisterStyle}>
-                <div className="col" style={{borderRight: "2px solid white"}}>
-                    <h6>Login</h6>
-                </div>
-                <div className="col">
-                   {/* Show different content based on registration status  */}
-                  {isRegistered ? (
-                 <h6>Registered Successfully!</h6>) : (
-                  <RegistrationForm onRegistrationComplete={handleRegistrationComplete} />
-                   )}
-                </div>
-            </div>
-        </nav>   
-        </>
-    )
+            {/* Toggle visibility of the signup form on click */}
+
+        
+        </div>
+      </nav>
+
+      {/* Pass handleRegisterClick as a prop to RegistrationForm */}
+      
+    </>
+  );
 }
+<<<<<<< HEAD
 export default NavBar
 >>>>>>> cdc1e24 (Added Header, Footer and some assets)
+=======
+
+export default NavBar;
+
+
+  
+  
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)

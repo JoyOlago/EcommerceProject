@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 import closeIcon from '../Assets/Navbar/close.svg'
 
 
@@ -33,7 +37,22 @@ const ProductDetails = ({ selectedProduct, addItemToCart, hideMore }) => {
 
 
 </div>  
+<<<<<<< HEAD
 
+=======
+=======
+
+
+const ProductDetails = ({ product }) => {
+  return (
+    <div>
+      <h3>{product.name}</h3>
+      <p>{product.description}</p>
+      <p>Price: ${product.price}</p>
+      {/* Add more details here based on your product data */}
+    </div>
+>>>>>>> 9a61d07 (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
   );
 };
 

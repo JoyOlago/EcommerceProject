@@ -2,22 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer'
-<<<<<<< HEAD
-=======
-import DisplayProductList from './components/ProductList';
->>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
 
 import Home from './components/Home';
 import DisplayProductList from './components/ProductList';
 import SearchBar from './components/SearchBar';
+<<<<<<< HEAD
 
 import { useState } from 'react';
 
+=======
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 function App() {
-<<<<<<< HEAD
-  const [cartItems, setCartItems]= useState([])
-
-
   let cardStyle={
     width:"18rem"
   }
@@ -27,6 +22,7 @@ function App() {
     <>
     <Header />
     <Home />    
+<<<<<<< HEAD
 
     <DisplayProductList cartItems={cartItems} setCartItems={setCartItems}/>
 
@@ -67,6 +63,8 @@ function App() {
 =======
 >>>>>>> dba8d43 (Chore:Renaming Cart no of items to products, updating delivery form code)
     <Home />
+=======
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
     <DisplayProductList/>
 >>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
     <Footer />  

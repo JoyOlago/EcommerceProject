@@ -14,7 +14,11 @@ npm install
 ```
  4. Start the app by running the command:
  
+<<<<<<< HEAD
  ```
+=======
+ ```sh
+>>>>>>> 8627ede (Chore:Reverting to c4d541034f37c411d4cfd89ff815727f95259190 before merge conflict)
 npm start
 ```
  5. Test your server by visiting this route in the browser:
