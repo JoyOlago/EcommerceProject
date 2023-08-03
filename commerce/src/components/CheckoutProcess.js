@@ -7,9 +7,7 @@ const CheckoutForm = () => {
     address: '',
     city: '',
     zipCode: '',
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
+
   });
 
   const handleInputChange = (e) => {
