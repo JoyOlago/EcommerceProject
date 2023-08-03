@@ -14,6 +14,7 @@ import SearchBar from './components/SearchBar';
 import { useState } from 'react';
 
 function App() {
+<<<<<<< HEAD
   const [cartItems, setCartItems]= useState([])
 
 
@@ -31,12 +32,16 @@ function App() {
 
     <Footer />  
 =======
+=======
+ 
+>>>>>>> dba8d43 (Chore:Renaming Cart no of items to products, updating delivery form code)
   let cardStyle={
     width:"18rem"
   }
   return (
     <>
     <Header />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
       <div className="App">
@@ -59,8 +64,9 @@ function App() {
 =======
       </div> */}
 =======
+=======
+>>>>>>> dba8d43 (Chore:Renaming Cart no of items to products, updating delivery form code)
     <Home />
->>>>>>> 9676354 (Feat: append display items to Home.js)
     <DisplayProductList/>
 >>>>>>> 0302945 (Feat:used displayProduct component to fetch data to display list of items and appended to App.js)
     <Footer />  
