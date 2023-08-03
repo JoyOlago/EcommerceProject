@@ -13,8 +13,7 @@ function App() {
   return (
     <>
     <Header />
-    <Home />
-    <SearchBar/>
+    <Home />    
     <DisplayProductList/>
     <Footer />  
     </>

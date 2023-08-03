@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import customAsset from '../Assets/Home/Asset 1.svg'
+import SearchBar from './SearchBar';
+import customAsset from '../Assets/Home/Asset 1.svg';
+import 'reactjs-popup/dist/index.css';
 
 
 function DisplayProductList() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [showDescription, setShowDescription] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
 
   let cardStyle={
@@ -41,8 +43,8 @@ function DisplayProductList() {
       });
   }, []);
 
-  function isShowDescription(){
-    setShowDescription(true)
+  function toggleLogin(){
+    setIsLoggedIn(true)
   }
 
   if (loading) {
@@ -60,6 +62,7 @@ function DisplayProductList() {
             </div>
 </div>
 
+<SearchBar/>
 <div className="container">
   {products.length === 0 ? (
         <div>No products found.</div>
@@ -67,13 +70,15 @@ function DisplayProductList() {
         <div className="row">
           {products.map(product => (
               <div className="col" style={{padding:"10px"}}>
-              <div key={product.product_name} className="card" style={cardStyle} onClick={isShowDescription}>
+              <div key={product.product_name} className="card" style={cardStyle}>
                 <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"300px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
                 <div className='card-header' style={{backgroundColor:"#D7BFD4", height:"10rem"}}>
                   <p style={{fontSize:"14px", color:"black"}} className='card-text'>{product.product_name}</p>
+                </div>
+                <div className='card-header'>
                   <h5 style={{color:"black"}}>Price: {product.unit_price}</h5>
                 </div>
-                {/* {showDescription == true ? (<p style={{fontSize:"12px"}}>{product.product_description}</p>):(<p></p> )} */}
+                {isLoggedIn == true ? (<p style={{fontSize:"12px"}}>{product.product_description}</p>):(<p></p>)} 
             </div>
           </div>
           ))}
