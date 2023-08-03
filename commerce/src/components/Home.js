@@ -2,7 +2,6 @@ import React from "react";
 import shoe1 from '../Assets/Home/shoe.jpeg'
 import shoe2 from '../Assets/Home/shoes2.jpg'
 import customAsset from '../Assets/Home/Asset 1.svg'
-import CheckoutForm from "./Checkout";
 
 function Home(){
      const carouselContainerStyle={
@@ -39,7 +38,6 @@ function Home(){
                     <img src={shoe2} style={imageStyle} class="d-block" alt="..."></img>
                 </div>
             </div>
-            <CheckoutForm/>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>

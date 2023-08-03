@@ -4,9 +4,7 @@
   "description": "## DESCRIPTION This is a React application, E-Commerce, that will allow the user to view a list of products, its details, be able to place the products into a cart, checkout the products, track their delivery and sign up to the platform as a user. Access the live site through this site \"\" ## PROJECT SETUP  1. Fork the project and clone it.  2. Open in terminal.  3. Run the command below to install the required dependencies:",
   "main": "test 2.js",
   "scripts": {
-    "vercel-build": "npm run vercel-build",
-    "yarn-install": "yarn install"
-   
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

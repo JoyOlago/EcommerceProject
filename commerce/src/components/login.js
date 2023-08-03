@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+// import { loginUser } from './userAuthentication';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await loginUser(formData);
+     // const response = await loginUser(formData);
       console.log('Login successful!', response);
       // Redirect to a new page or update the UI as needed after successful login.
     } catch (error) {
