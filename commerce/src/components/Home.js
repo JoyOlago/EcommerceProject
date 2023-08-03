@@ -28,11 +28,11 @@ function Home(){
 
     return(
         <>
-    <div className="container-fluid" style={carouselContainerStyle}>
+{/*     <div className="container-fluid" style={carouselContainerStyle}>
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src={shoe1} style={imageStyle} class="d-block" alt="..."></img>
+                    <img src= style={imageStyle} class="d-block" alt="..."></img>
                 </div>
                 <div class="carousel-item">
                     <img src={shoe2} style={imageStyle} class="d-block" alt="..."></img>
@@ -47,7 +47,12 @@ function Home(){
             <span class="visually-hidden">Next</span>
         </button>
         </div>
-        </div>
+        </div> */}
+
+
+
+
+
 {/*         <div className="container-fluid">
             <img src={homePageimage}></img>
         </div> */}

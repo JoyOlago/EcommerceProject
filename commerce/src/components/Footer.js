@@ -4,7 +4,7 @@ import instagramlogo from '../Assets/Footer/instagramlinkimage.png'
 function Footer(){
 
     const footerStyle={
-        height:"190px",
+        height:"auto",
         backgroundColor: '#1D7773'
     }
 
@@ -24,17 +24,18 @@ function Footer(){
             <div className="row">
                 <div className="col">
                     <div className="container" style={footerInfoStyle}>
-                    <h2>Find Us</h2>
+                    <h4>Find Us</h4>
                     <address>1 Koinange Street
                         Nairobi City Centre
                     </address>
                     <p>Open 9AM - 6PM</p>
+                    <h6>Contact Us</h6>
+                    <p>0792 000 000 </p>
+                    
                 </div>
             </div>
                 <div className="col" style={{color:"white"}}>
-                    <h2>Contact Us</h2>
-                    <p>0792 000 000 </p>
-                    <h3>Social Media</h3>
+                    <h4>Social Media</h4>
                     <img src={facebooklogo} style={socialMediaLinksStyle}></img>
                     <img src={instagramlogo} style={socialMediaLinksStyle}></img>
                 </div>
