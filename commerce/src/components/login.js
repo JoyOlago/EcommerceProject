@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 
-// import { loginUser } from './userAuthentication';
-
-
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
@@ -20,7 +17,6 @@ const Login = () => {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-
       const response = await fetch('http://ecommerce.muersolutions.com/api/v1/user/login', { 
         method: 'POST',
         headers: {
@@ -35,7 +31,6 @@ const Login = () => {
       } else {
         console.log('Login failed. Please check your credentials.');
       }
-
     } catch (error) {
       console.error('An error occurred during login:', error);
     }
