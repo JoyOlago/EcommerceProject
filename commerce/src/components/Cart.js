@@ -1,39 +1,36 @@
-import { useState } from "react";
-import DisplayProductList from "./ProductList";
-import CartNoOfItems from   './CartNoOfItems'
-const ShoppingCart =  () => {
-    const [cartItems, setCartItems] = useState([]);
-    const handleAddToCart = (item) => {
-    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-    if (existingItem) {
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
-        )
-      );
-    } else {
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
-    };
-    const handleRemoveFromCart = (item) => {
-    setCartItems(cartItems.filter((cartItem) => cartItem.id !== item.id));
-    };
-}
+import React, { useState } from "react";
+import ProductDetails from "./ProductDetail";
+import CheckoutForm from './CheckoutProcess'
+import Payment from "./Payment";
+const Cart = ({cartItems}) => {
+ 
+
+  // function addItemToCart(selectedProduct) {
+  //   // Assuming the "products" array is defined or imported from somewhere
+  //   // const existingItem = products.find((item) => item.product_name.includes(selectedProduct.product_name));
+  //   // setCartItems([...cartItems, existingItem]);
+  // }
+
   return (
-    <div className="shopping-cart">
-      <h2>Shopping Cart</h2>
-      <div className="cart-items">
-        {cartItems.map((item) => (
-          <CartItem key={item.id} item={item} onRemove={handleRemoveFromCart} />
-        ))}
-      </div>
-      {/* Display the total price */}
-      <div className="total-price">
-        Total: $
-        {cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
-      </div>
+    <>
+    <div className="card">
+      <h4>Cart:</h4>
+      {cartItems.map((item) => (
+        <div key={item.id}>
+          <p>{item.product_name}</p>
+          <p>{item.unit_price}</p>
+          <p>{item.product_full_image}</p>
+          <p>{item.unit_price}</p>
+        </div>
+      ))}
+      <CheckoutForm />
+      <Payment />
     </div>
+    </>
+    
   );
+};
 
 
-export default ShoppingCart;
+export default Cart;
+
