@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import customAsset from '../Assets/Home/Asset 1.svg';
 import 'reactjs-popup/dist/index.css';
+
 import ProductDetails from './ProductDetail';
 
 
@@ -24,6 +25,7 @@ function DisplayProductList({cartItems, setCartItems}) {
   let cardStyle={
     width:"18rem",
     height:"28rem",
+
   }
 
   const containerStyle={
@@ -57,33 +59,6 @@ function DisplayProductList({cartItems, setCartItems}) {
     setIsLoggedIn(true)
   }
 
-/*   function toggleShowDescription(){
-    setShowDescription(true)
-  } */
-
-  function showMore(event){
-    //alert(event.target.name)
-    setDisplayProductDetail(!displayProductDetail)
-    const sProduct = event.target.name
-    //alert(sProduct)
-    //const returnNamed = object.filter((item)=>item.product_description.includes("Fjallraven"))
-    const returnNamed = products.find((item)=>item.product_name.includes(sProduct))
-    //alert(returnNamed)
-    setSelectedProduct(returnNamed)
-  }
-
-  function hideMore(){
-    setDisplayProductDetail(!displayProductDetail)
-  }
-
-  function addItemToCart(event){
-    const nameOfItemSelected = event.target.name
-    //alert(nameOfItemSelected)
-    const returnItem = products.find((item)=> item.product_name.includes(nameOfItemSelected))
-    //alert(returnItem)
-    setCartItems([...cartItems,returnItem])
-  }
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -101,6 +76,7 @@ function DisplayProductList({cartItems, setCartItems}) {
 </div>
 
 <SearchBar/>
+
 <div className='card'>
   {cartItems.map(item=>(
     <>
@@ -112,6 +88,7 @@ function DisplayProductList({cartItems, setCartItems}) {
 </div>
 <div className='container-fluid' style={{backgroundColor:'#E6E6E6'}}>
   <div className="container" style={{backgroundColor:'#E6E6E6'}}>
+
   {products.length === 0 ? (
         <div>No products found.</div>
       ) : (
@@ -119,13 +96,16 @@ function DisplayProductList({cartItems, setCartItems}) {
           {products.map(product => (
               <div className="col" style={{padding:"10px"}}>
               <div key={product.product_name} className="card" style={cardStyle}>
+
                 <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
                 <div className='card-header' style={{height:"10rem"}}>
                   <p style={{fontFamily:"Franklin-Gothic-Medium",fontSize:"20px", color:"black"}} className='card-text'>{product.product_name.slice(0,20)}</p>
+
                 </div>
                 <div className='card-header'>
                   <h5 style={{color:"black"}}>Price: {product.unit_price}</h5>
                 </div>
+
                 <div className='card-header'>
                 <div className='row'>
                   <div className='col'>
@@ -136,11 +116,13 @@ function DisplayProductList({cartItems, setCartItems}) {
                   </div>
                 </div>
                 </div>
+
             </div>
           </div>
           ))}
         </div>
       )}
+
   </div>
 </div>
 
@@ -148,6 +130,7 @@ function DisplayProductList({cartItems, setCartItems}) {
         <div key={product.product_name}>{product.product_name}</div>
       ))} */}
       {displayProductDetail == true ? ( <ProductDetails selectedProduct={selectedProduct} addItemToCart={addItemToCart} hideMore={hideMore} /> ) : ('')}
+
     </div>
   );
 };

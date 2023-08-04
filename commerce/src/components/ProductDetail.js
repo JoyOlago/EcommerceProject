@@ -1,4 +1,5 @@
 import React from "react";
+
 import closeIcon from '../Assets/Navbar/close.svg'
 
 
@@ -32,6 +33,7 @@ const ProductDetails = ({ selectedProduct, addItemToCart, hideMore }) => {
 
 
 </div>  
+
   );
 };
 
