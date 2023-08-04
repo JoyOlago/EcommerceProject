@@ -6,15 +6,24 @@ import Footer from './components/Footer'
 import Home from './components/Home';
 import DisplayProductList from './components/ProductList';
 import SearchBar from './components/SearchBar';
+
+import { useState } from 'react';
+
 function App() {
+  const [cartItems, setCartItems]= useState([])
+
+
   let cardStyle={
     width:"18rem"
   }
+
   return (
     <>
     <Header />
     <Home />    
-    <DisplayProductList/>
+
+    <DisplayProductList cartItems={cartItems} setCartItems={setCartItems}/>
+
     <Footer />  
     </>
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import RegistrationForm from "./Register"; // Import the RegistrationForm component
+
 import Login from "./login"; // Import the Login component
 import "./NavBar.css";
 
@@ -15,10 +16,12 @@ function NavBar({ navBarStyle }) {
   // Function to handle the login button click
   const handleLoginButtonClick = () => {
     setShowLoginForm(!showLoginForm); // Toggle the visibility of the login form
+
   };
 
   const menuContainerStyle = {
     position: "relative",
+
     //marginLeft: "100",
     float: "left",
     top: "30%",
@@ -33,14 +36,23 @@ function NavBar({ navBarStyle }) {
     margin: "6px 0",
   };
 
+
+    float: "left",
+    top: "30%",
+    width: "80px",
+  };
+
   const loginRegisterStyle = {
     position: "relative",
     float: "right",
     width: "190px",
+
+
     color: "white",
     marginRight: "5%",
     top: "30%",
   };
+
 
   const buttonStyle = {
     width: "50px",
@@ -58,10 +70,12 @@ function NavBar({ navBarStyle }) {
           handleRegisterClick={handleRegisterClick}
         />
       )}
+
       <nav className="navbar-custom" style={navBarStyle}>
         <div className="container" id="menuContainer" style={menuContainerStyle}>
           {/* ... */}
         </div>
+
 
         <h1
           style={{
@@ -101,9 +115,11 @@ function NavBar({ navBarStyle }) {
       {showLoginForm && (
         <Login showLoginForm={showLoginForm} setShowLoginForm={setShowLoginForm} />
       )}
+
     </>
   );
 }
+
 
 export default NavBar;
 
