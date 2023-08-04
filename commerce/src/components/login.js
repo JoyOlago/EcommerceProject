@@ -5,7 +5,7 @@ const Login = () => {
     email: '',
     password: '',
   });
-
+  const SIGN_UP_URL= "http://ecommerce.muersolutions.com/api/v1/user/login"
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
@@ -15,6 +15,8 @@ const Login = () => {
   };
 
   const handleLogin = async (event) => {
+    SIGN_UP_URL = http://ecommerce.muersolutions.com/api/v1/user/login
+
     event.preventDefault();
     try {
       const response = await fetch('http://ecommerce.muersolutions.com/api/v1/user/login', { 
