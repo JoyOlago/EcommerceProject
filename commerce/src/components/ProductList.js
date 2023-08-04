@@ -129,7 +129,7 @@ function DisplayProductList({cartItems, setCartItems}) {
 {/*       {product.map(product=>(
         <div key={product.product_name}>{product.product_name}</div>
       ))} */}
-      {displayProductDetail == true ? ( <ProductDetails selectedProduct={selectedProduct} addItemToCart={addItemToCart} hideMore={hideMore} /> ) : ('')}
+      {displayProductDetail == true ? ( <ProductDetails selectedProduct={selectedProduct} /> ) : ('')}
 
     </div>
   );
