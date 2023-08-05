@@ -32,3 +32,14 @@
     }
   }
   
+  {
+    
+	"users": [{
+		"first_name": "kim",
+		"last_name": "mbatia",
+		"email": "kim@gmail",
+		"password": "1234"
+	}]
+
+}
+  
