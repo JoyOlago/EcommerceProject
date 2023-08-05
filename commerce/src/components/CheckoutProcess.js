@@ -1,5 +1,6 @@
  import React, { useState } from 'react';
 import Payment from './Payment';
+import {Router, BrowserRouter, Routes, Route, NavLink} from "react-router-dom"
 
 const CheckoutForm = () => {
   const [formData, setFormData] = useState({
@@ -35,7 +36,8 @@ const CheckoutForm = () => {
           />
         </div>
         {/* Add other input fields for email, address, city, zip code, card number, expiry date, and CVV */}
-        <button type="submit">Checkout</button>
+         <button type="submit">Checkout</button>
+        {/* <NavLink to="/Checkout">Checkout</NavLink> */}
       </form>
       <Payment />
     </>

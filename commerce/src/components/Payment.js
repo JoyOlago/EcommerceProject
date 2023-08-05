@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+//import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
 
 const Payment = () => {
   const [error, setError] = useState(null);
   const [paymentLoading, setPaymentLoading] = useState(false);
-  const stripe = useStripe();
-  const elements = useElements();
+  //const stripe = useStripe();
+  //const elements = useElements();
 
-  const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setPaymentLoading(true);
 
-    const cardElement = elements.getElement(CardElement);
+ /*    const cardElement = elements.getElement(CardElement); */
 
-    try {
+/*     try {
       if (!stripe || !cardElement) {
         throw new Error('Stripe is not ready or card element is missing.');
       }
@@ -35,13 +35,15 @@ const Payment = () => {
 
     } catch (error) {
       setError(error.message);
-    }
+    } */
 
-    setPaymentLoading(false);
-  };
+/*     setPaymentLoading(false);
+  }; */
+
+
 
   return (
-    <div>
+/*     <div>
       <h2>Payment Details</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="card-element">Credit or Debit Card:</label>
@@ -67,8 +69,10 @@ const Payment = () => {
           {paymentLoading ? 'Processing...' : 'Pay'}
         </button>
       </form>
-    </div>
+    </div> */
+    <></>
   );
 };
 
+}
 export default Payment;

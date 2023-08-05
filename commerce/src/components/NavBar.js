@@ -36,12 +36,12 @@ function NavBar({ navBarStyle }) {
     margin: "6px 0",
   };
 
-
+/* 
     float: "left",
     top: "30%",
     width: "80px",
   };
-
+ */
   const loginRegisterStyle = {
     position: "relative",
     float: "right",
