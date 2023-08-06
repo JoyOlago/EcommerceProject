@@ -1,11 +1,11 @@
-
-
 import React from "react";
 import searchIcon from '../Assets/SearchBar/search.svg'
 
+
+
 const SearchBar = ({ searchTerm, onSearchChange }) => {
   return (
-    <div className="container" style={{backgroundColor:"#1D7773", padding:"20px", textAlign:"center", width:"400px", height:"80px", borderRadius:"20px"}}>
+    <div className="container" style={{backgroundColor:"#1D7773", padding:"20px", textAlign:"center", width:"350px", height:"80px", borderRadius:"20px"}}>
       <div style={{}}>
         <div style={{backgroundColor:"#1D7773"}}>
           <div className="row">
@@ -18,7 +18,7 @@ const SearchBar = ({ searchTerm, onSearchChange }) => {
             type="text"
             placeholder="Type your term here"
             value={searchTerm}
-            onChange={(e) => onSearchChange(e.target.value)}
+            onChange={onSearchChange}
             style={{}}
             />
           </div>

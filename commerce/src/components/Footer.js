@@ -5,7 +5,8 @@ function Footer(){
 
     const footerStyle={
         height:"auto",
-        backgroundColor: '#1D7773'
+        backgroundColor: '#1D7773',
+        overflow: 'hidden'
     }
 
     const footerInfoStyle={
@@ -24,13 +25,13 @@ function Footer(){
             <div className="row">
                 <div className="col">
                     <div className="container" style={footerInfoStyle}>
-                    <h4>Find Us</h4>
-                    <address>1 Koinange Street
+                    <h6>Find Us</h6>
+                    <p style={{fontSize:"12px"}}>Fleet Street
                         Nairobi City Centre
-                    </address>
-                    <p>Open 9AM - 6PM</p>
+                    </p>
+                    <p style={{fontSize:"12px"}}>Open 9AM - 6PM</p>
                     <h6>Contact Us</h6>
-                    <p>0792 000 000 </p>
+                    <p style={{fontSize:"12px"}}>0792 000 000 </p>
                     
                 </div>
             </div>
