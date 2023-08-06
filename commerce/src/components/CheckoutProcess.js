@@ -1,6 +1,5 @@
- import React, { useState } from 'react';
+import React, { useState } from 'react';
 import Payment from './Payment';
-import {Router, BrowserRouter, Routes, Route, NavLink} from "react-router-dom"
 
 const CheckoutForm = () => {
   const [formData, setFormData] = useState({
@@ -18,12 +17,12 @@ const CheckoutForm = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     console.log('Form data:', formData);
   };
 
   return (
     <>
+      <h2>Checkout Form</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="fullName">Full Name:</label>
@@ -35,13 +34,52 @@ const CheckoutForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        {/* Add other input fields for email, address, city, zip code, card number, expiry date, and CVV */}
-         <button type="submit">Checkout</button>
-        {/* <NavLink to="/Checkout">Checkout</NavLink> */}
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="city">City:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            value={formData.city}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="zipCode">Zip Code:</label>
+          <input
+            type="text"
+            id="zipCode"
+            name="zipCode"
+            value={formData.zipCode}
+            onChange={handleInputChange}
+          />
+        </div>
+        <Payment formData={formData} />
+        <button type="submit">Submit Order</button>
       </form>
-      <Payment />
     </>
   );
 };
 
 export default CheckoutForm;
+
