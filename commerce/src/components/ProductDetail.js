@@ -1,5 +1,4 @@
 import React from "react";
-
 import closeIcon from '../Assets/Navbar/close.svg'
 
 
@@ -13,8 +12,8 @@ const ProductDetails = ({ selectedProduct, addItemToCart, hideMore }) => {
       /* Add more details here based on your product data */
 /*     </div> */
 
-<div  className='container' style={{display:'block',position:'fixed',top:"30%", left:'10%', backgroundColor:'rgba(50,50,50,0.7)', height:'100%', width:'100%'}}>
-<div className='container' style={{backgroundColor:'white'}}>
+<div  className='container' style={{display:'block',position:'fixed',top:"1%", left:'10%', backgroundColor:'rgba(50,50,50,0.7)', height:'100%', width:'100%'}}>
+<div className='container' style={{ position:'relative',top:"30%", backgroundColor:'white'}}>
   <div className='row'>
     <div className='col'>
     <img src={selectedProduct.product_full_image} style={{width:'300px', height:'300px'}}></img>
@@ -33,7 +32,6 @@ const ProductDetails = ({ selectedProduct, addItemToCart, hideMore }) => {
 
 
 </div>  
-
   );
 };
 

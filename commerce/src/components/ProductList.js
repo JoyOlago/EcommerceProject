@@ -2,70 +2,15 @@ import React, { useState, useEffect } from 'react';
 import SearchBar from './SearchBar';
 import customAsset from '../Assets/Home/Asset 1.svg';
 import 'reactjs-popup/dist/index.css';
-
 import ProductDetails from './ProductDetail';
-
 
 function DisplayProductList({cartItems, setCartItems}) {
   const [products, setProducts] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-  //add state to handle display when product is clicked
-  const [selectProduct, setSelectedProduct] = useState(null)
-  const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
-
-  useEffect(() => {
-    // Fetch the product data from the API
-    fetch (BASE_URL)
-    .then((response) => response.json())
-    .then((data) => {
-      setProducts(data);
-      setLoading(false);
-    })
-      .catch(error => {
-        console.error('Error fetching products:', error);
-        setLoading(false);
-      });
-  }, []);
-//add function to handleProduct click 
-
-  function handleProductClick(product){
-    setSelectedProduct(product)
-    
-  }
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div>
-{/* <div class="card" style="width: 18rem;"> */}
-      <h2>Product List</h2>
-      {products.length === 0 ? (
-        <div>No products found.</div>
-      ) : (
-        <ul>
-          {products.map(product => (
-            <li key={product.id} onClick={() => handleProductClick(product)}>
-              <h3>{product.product_name}</h3>
-              <p>{product.product_description}</p>
-              <p>Price: {product.unit_price}</p>
-              <img alt="Product" src={product.product_full_image} />
-              {/* <p>{product.product_thumbnail}</p> */}
-              <p>Ranking: {product.ranking}</p>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
-
-export default DisplayProductList;
-
-import React, { useState, useEffect } from 'react';
-import customAsset from '../Assets/Home/Asset 1.svg'
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [displayProductDetail, setDisplayProductDetail] = useState(false);
+  const [searchFIlter, setSearchFilter] = useState("")
 
   const BASE_URL= "http://ecommerce.muersolutions.com/api/v1/products"
 /* 
@@ -78,7 +23,6 @@ import customAsset from '../Assets/Home/Asset 1.svg'
   let cardStyle={
     width:"18rem",
     height:"28rem",
-    
   }
 
   const containerStyle={
@@ -106,12 +50,48 @@ import customAsset from '../Assets/Home/Asset 1.svg'
         console.error('Error fetching products:', error);
         setLoading(false);
       });
-  }, []);
+  }, [searchFIlter]);
 
   function toggleLogin(){
     setIsLoggedIn(true)
   }
 
+/*   function toggleShowDescription(){
+    setShowDescription(true)
+  } */
+
+  function showMore(event){
+    //alert(event.target.name)
+    setDisplayProductDetail(!displayProductDetail)
+    const sProduct = event.target.name
+    //alert(sProduct)
+    //const returnNamed = object.filter((item)=>item.product_description.includes("Fjallraven"))
+    const returnNamed = products.find((item)=>item.product_name.includes(sProduct))
+    //alert(returnNamed)
+    setSelectedProduct(returnNamed)
+  }
+
+  function hideMore(){
+    setDisplayProductDetail(!displayProductDetail)
+  }
+
+  function addItemToCart(event){
+    const nameOfItemSelected = event.target.name
+    //alert(nameOfItemSelected)
+    const returnItem = products.find((item)=> item.product_name.includes(nameOfItemSelected))
+    //alert(returnItem)
+    setCartItems([...cartItems,returnItem])
+  }
+
+  function onSearchChange(event){
+    const searchTerm = event.target.value;
+    //console.log(searchTerm)
+    setSearchFilter(searchTerm)
+    const foundProducts = products.filter(
+      (item)=> searchFIlter === ""?true:
+      item.product_name.toLowerCase().includes(searchTerm))
+    setProducts(foundProducts)
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -119,29 +99,19 @@ import customAsset from '../Assets/Home/Asset 1.svg'
 
   return (
     <div>
-{/* <div class="card" style="width: 18rem;"> */}
+      {/* <div class="card" style="width: 18rem;"> */}
 
-<div className="container" style={containerStyle}>
-  <h1 style={{color:"#1D7773", fontSize:"72px"}}>Product List</h1>
-  <div className="container" style={customAssetContainer}>
-                <img src={customAsset}></img>
-            </div>
-</div>
+      <div className="container" style={containerStyle}>
+        <h1 style={{color:"#1D7773", fontSize:"72px"}}>Product List</h1>
+        <div className="container" style={customAssetContainer}>
+          <img src={customAsset}></img>
+        </div>
+      </div>
 
-<SearchBar/>
 
-<div className='card'>
-  {cartItems.map(item=>(
-    <>
-      <p>{item.product_name}</p>
-      <p> {item.unit_price}</p>
-    </>
-
-  ))}
-</div>
+      <SearchBar onSearchChange={onSearchChange} />
 <div className='container-fluid' style={{backgroundColor:'#E6E6E6'}}>
   <div className="container" style={{backgroundColor:'#E6E6E6'}}>
-
   {products.length === 0 ? (
         <div>No products found.</div>
       ) : (
@@ -149,41 +119,36 @@ import customAsset from '../Assets/Home/Asset 1.svg'
           {products.map(product => (
               <div className="col" style={{padding:"10px"}}>
               <div key={product.product_name} className="card" style={cardStyle}>
-
                 <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
                 <div className='card-header' style={{height:"10rem"}}>
                   <p style={{fontFamily:"Franklin-Gothic-Medium",fontSize:"20px", color:"black"}} className='card-text'>{product.product_name.slice(0,20)}</p>
-
                 </div>
                 <div className='card-header'>
                   <h5 style={{color:"black"}}>Price: {product.unit_price}</h5>
                 </div>
-
                 <div className='card-header'>
                 <div className='row'>
                   <div className='col'>
-                    <button name={product.product_name.slice(0,3)} className='btn' style={{backgroundColor:"#1D7773"}} onClick={showMore}>Show More</button>
+                    <button name={product.product_name.slice(0,3)} className='btn' style={{backgroundColor:"#1D7773", fontColor:"white"}} onClick={showMore}>Show More</button>
                   </div>
                   <div className='col'>
                     <button name={product.product_name.slice(0,7)} className='btn btn-primary' onClick={addItemToCart}>Add to Cart</button>
                   </div>
                 </div>
                 </div>
-
             </div>
           </div>
           ))}
         </div>
       )}
-
   </div>
 </div>
+
 
 {/*       {product.map(product=>(
         <div key={product.product_name}>{product.product_name}</div>
       ))} */}
-      {displayProductDetail == true ? ( <ProductDetails selectedProduct={selectedProduct} /> ) : ('')}
-
+      {displayProductDetail == true ? ( <ProductDetails style={{position:'fixed', top:'0px', left:'0'}} selectedProduct={selectedProduct} addItemToCart={addItemToCart} hideMore={hideMore} /> ) : ('')}
     </div>
   );
 };
