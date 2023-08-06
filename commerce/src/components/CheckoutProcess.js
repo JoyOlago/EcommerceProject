@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
+import Payment from './Payment';
 
 const CheckoutForm = () => {
   const [formData, setFormData] = useState({
@@ -7,7 +8,6 @@ const CheckoutForm = () => {
     address: '',
     city: '',
     zipCode: '',
-
   });
 
   const handleInputChange = (e) => {
@@ -18,25 +18,27 @@ const CheckoutForm = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Simulate the checkout process here, e.g., sending data to the server or external payment gateway
     console.log('Form data:', formData);
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div>
-        <label htmlFor="fullName">Full Name:</label>
-        <input
-          type="text"
-          id="fullName"
-          name="fullName"
-          value={formData.fullName}
-          onChange={handleInputChange}
-        />
-      </div>
-      {/* Add other input fields for email, address, city, zip code, card number, expiry date, and CVV */}
-      <button type="submit">Checkout</button>
-    </form>
+    <>
+      <form onSubmit={handleFormSubmit}>
+        <div>
+          <label htmlFor="fullName">Full Name:</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            value={formData.fullName}
+            onChange={handleInputChange}
+          />
+        </div>
+        {/* Add other input fields for email, address, city, zip code, card number, expiry date, and CVV */}
+        <button type="submit">Checkout</button>
+      </form>
+      <Payment />
+    </>
   );
 };
 
