@@ -1,78 +1,50 @@
 import React, { useState } from 'react';
-//import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
 
-const Payment = () => {
+const Payment = ({ formData }) => {
   const [error, setError] = useState(null);
   const [paymentLoading, setPaymentLoading] = useState(false);
-  //const stripe = useStripe();
-  //const elements = useElements();
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     setPaymentLoading(true);
 
- /*    const cardElement = elements.getElement(CardElement); */
+    try {
+      // Simulate payment processing (no actual payment)
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
-/*     try {
-      if (!stripe || !cardElement) {
-        throw new Error('Stripe is not ready or card element is missing.');
-      }
-
-      const { paymentMethod, error } = await stripe.createPaymentMethod({
-        type: 'card',
-        card: cardElement,
-      });
-
-      if (error) {
-        throw new Error(error.message);
-      }
-
-      console.log('Payment Method ID:', paymentMethod.id);
+      console.log('Payment successful!');
+      console.log('Form data:', formData);
 
       // Show a success message or redirect to a thank you page
       // Handle the successful payment completion here
 
     } catch (error) {
-      setError(error.message);
-    } */
+      setError('Payment failed. Please try again later.');
+    }
 
-/*     setPaymentLoading(false);
-  }; */
-
-
+    setPaymentLoading(false);
+  };
 
   return (
-/*     <div>
+    <div>
       <h2>Payment Details</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="card-element">Credit or Debit Card:</label>
-        <CardElement
+        {/* Replace this input with any other payment-related fields you want to simulate */}
+        <input
+          type="text"
           id="card-element"
-          options={{
-            style: {
-              base: {
-                fontSize: '16px',
-                color: '#424770',
-                '::placeholder': {
-                  color: '#aab7c4',
-                },
-              },
-              invalid: {
-                color: '#9e2146',
-              },
-            },
-          }}
+          name="card-element"
+          placeholder="Card Number"
         />
         <div className="error-message">{error}</div>
-        <button type="submit" disabled={!stripe || paymentLoading}>
+        <button type="submit" disabled={paymentLoading}>
           {paymentLoading ? 'Processing...' : 'Pay'}
         </button>
       </form>
-    </div> */
-    <></>
+    </div>
   );
 };
 
-}
 export default Payment;
