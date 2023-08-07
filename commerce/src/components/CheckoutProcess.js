@@ -21,9 +21,12 @@ const CheckoutForm = () => {
   };
 
   return (
-    <>
-      <h2>Checkout Form</h2>
-      <form onSubmit={handleFormSubmit}>
+    <div className='container' style={{backgroundColor:'rgb(248,248,248)', borderRadius:"30px", textAlign:'center'}}>
+      <h1 style={{fontFamily: "Franklin-Gothic-Medium",}}>Checkout Form</h1>
+      <div className='row'>
+        <div className='col'>
+          <div className='container' style={{textAlign:'left'}}>
+        <form onSubmit={handleFormSubmit}>
         <div>
           <label htmlFor="fullName">Full Name:</label>
           <input
@@ -74,10 +77,17 @@ const CheckoutForm = () => {
             onChange={handleInputChange}
           />
         </div>
-        <Payment formData={formData} />
-        <button type="submit">Submit Order</button>
-      </form>
-    </>
+        </form>
+        </div>
+        </div>
+        <div className='col'>
+          <Payment formData={formData} />
+          <button type="submit">Submit Order</button>
+        </div>
+      </div>
+
+
+    </div>
   );
 };
 

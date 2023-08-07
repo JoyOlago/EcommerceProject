@@ -98,16 +98,13 @@ function DisplayProductList({cartItems, setCartItems}) {
   }
 
   return (
-    <div>
-      {/* <div class="card" style="width: 18rem;"> */}
-
+    <div className='container-fluid'>
       <div className="container" style={containerStyle}>
         <h1 style={{color:"#1D7773", fontSize:"72px"}}>Product List</h1>
         <div className="container" style={customAssetContainer}>
           <img src={customAsset}></img>
         </div>
       </div>
-
 
       <SearchBar onSearchChange={onSearchChange} />
 <div className='container-fluid' style={{backgroundColor:'#E6E6E6'}}>
@@ -145,9 +142,8 @@ function DisplayProductList({cartItems, setCartItems}) {
 </div>
 
 
-{/*       {product.map(product=>(
-        <div key={product.product_name}>{product.product_name}</div>
-      ))} */}
+
+
       {displayProductDetail == true ? ( <ProductDetails style={{position:'fixed', top:'0px', left:'0'}} selectedProduct={selectedProduct} addItemToCart={addItemToCart} hideMore={hideMore} /> ) : ('')}
     </div>
   );

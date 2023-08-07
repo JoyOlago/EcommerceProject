@@ -10,6 +10,7 @@ import cartIcon from './Assets/Navbar/cart.png'
 import { CardElement, useStripe, useElements, Elements } from '@stripe/react-stripe-js';
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 import  Checkout from './components/Checkout'
+import CheckoutForm from './components/CheckoutProcess'
 import { useState } from 'react';
 
 
@@ -50,15 +51,9 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/Checkout" element={<Checkout cartItems={cartItems}/>} />
-      </Routes>
-    </BrowserRouter>
-
-    <Header />
-    <Home />    
-    <div className='container-fluid'>
+        <Route path="/" element={<div className='container-fluid'>
           <DisplayProductList cartItems={cartItems} setCartItems={setCartItems}/>
           {showCart ? ( <div className='container' style={{width:"300px",backgroundColor:'rgb(211,224,237)', position:'fixed', top:'0px', right:'20px',border: '5px solid white', borderRadius:'20px', paddingTop: '20px'}}>
           <Cart cartItems={cartItems} removeItemFromCart={removeItemFromCart} itemsCount={itemsCount} increaseQuantity={increaseQuantity} toggleCart={toggleCart}/>
@@ -68,8 +63,10 @@ function App() {
           <p style={{position:'relative', top:'40px'}}>{cartItems.length} items in cart</p>
         </div>
       </>)}
+          </div>} />
+        <Route path="/Checkout" element={<Checkout cartItems={cartItems}/>} />
+      </Routes> 
 
-    </div>
     <Footer />  
     </>
 
