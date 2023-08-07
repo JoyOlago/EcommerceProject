@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ProductDetails from "./ProductDetail";
-import CheckoutForm from './CheckoutProcess'
 import Payment from "./Payment";
 import CartNoOfItems from "./CartNoOfItems";
 import closeIcon from '../Assets/Navbar/close.svg'
+import {useNavigate} from 'react-router-dom'
 const Cart = ({cartItems, removeItemFromCart, itemsCount, increaseQuantity,toggleCart}) => {
  
 
@@ -12,6 +12,18 @@ const Cart = ({cartItems, removeItemFromCart, itemsCount, increaseQuantity,toggl
   //   // const existingItem = products.find((item) => item.product_name.includes(selectedProduct.product_name));
   //   // setCartItems([...cartItems, existingItem]);
   // }
+
+  const navigate = useNavigate();
+
+  const cartContainerStyle={
+    width:"300px",
+    backgroundColor:'rgb(211,224,237)',
+    position:'fixed',
+    top:'0px',
+    right:'20px',
+    border: '5px solid white',
+    borderRadius:'20px',
+    paddingTop: '20px'}
 
   const CartStyle={
     
@@ -22,10 +34,11 @@ const Cart = ({cartItems, removeItemFromCart, itemsCount, increaseQuantity,toggl
     fontSize:'12px'
   }
 
-
-
   return (
     <>
+    <div className="container">
+
+    </div>
     <div className="container" style={CartStyle}>
       <h4>Cart:</h4>
       <img onClick={toggleCart} style={{position:'absolute', float:"right",top:"1%", right:'1%', width:'50px',height:'50px'}} src={closeIcon}></img>
@@ -54,9 +67,7 @@ const Cart = ({cartItems, removeItemFromCart, itemsCount, increaseQuantity,toggl
       <div className="container">
         <CartNoOfItems cartItems={cartItems}/>
       </div>
-
-      <CheckoutForm />
-      <Payment />
+      <button onClick={()=> navigate('Checkout')} className="btn btn-success">Checkout</button>
     </div>
     </>
     
