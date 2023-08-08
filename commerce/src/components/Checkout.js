@@ -47,9 +47,9 @@ function Checkout({cartItems}){
         <div className="container">
           <div className="row">
             {cartItems.map(product => (
-            <div className="col" style={{padding:"10px"}}>
-            <div key={product.product_name} className="card" style={cardStyle}>
-              <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} class="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
+            <div key={product.product_name} className="col" style={{padding:"10px"}}>
+            <div  className="card" style={cardStyle}>
+              <img style={{position:"relative", marginLeft:"15%", width:"200px", height:"200px"}} className="card-img-top" src={product.product_full_image} alt="Card image cap"></img>
               <div className='card-header' style={{height:"10rem"}}>
                 <p style={{fontFamily:"Franklin-Gothic-Medium",fontSize:"20px", color:"black"}} className='card-text'>{product.product_name.slice(0,20)}</p>
               </div>
