@@ -44,7 +44,7 @@ const Cart = ({cartItems, removeItemFromCart, itemsCount, increaseQuantity,toggl
       <img onClick={toggleCart} style={{position:'absolute', float:"right",top:"1%", right:'1%', width:'50px',height:'50px'}} src={closeIcon}></img>
       <div className="row">
       {cartItems.map((item) => (
-        <div className="container" style={{height:'270px'}}>
+        <div key={item.product_name} className="container" style={{height:'270px'}}>
           <div key={item.id}>
             <img src={item.product_full_image} style={{width:'100px',height:'100px'}}></img>
             <h5 style={{fontSize:'15px'}}>{item.product_name}</h5>
