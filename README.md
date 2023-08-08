@@ -3,7 +3,8 @@
 ### By Joy Olago, Timothy Baraka, Kimani Mbatia & Victor Kiptoo.
 
 ## DESCRIPTION
-This is a React application, E-Commerce, that will allow the user to view a list of products, its details, be able to place the products into a cart, checkout the products, track their delivery and sign up to the platform as a user. Access the live site through this site ""
+This is a React application, E-Commerce, that will allow the user to view a list of products, its details, be able to place the products into a cart, checkout the products, track their delivery and sign up to the platform as a user. Access the live site through this site "https://ecommerce-project-gold.vercel.app/"
+
 ## PROJECT SETUP
  1. Fork the project and clone it.
  2. Open in terminal.
@@ -18,9 +19,8 @@ npm install
 npm start
 ```
  5. Test your server by visiting this route in the browser:
- //To be filled out after deploying
+    http://ecommerce.muersolutions.com/api/v1/products 
  
-
 ## TECHNOLOGIES EMPLOYED
 React
 JSX
